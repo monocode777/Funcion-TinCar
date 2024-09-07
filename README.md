@@ -12,19 +12,20 @@ Definimos una columna idParqueadero y una columna fecha para registrar la fecha 
        );
 
  # Creación de función 
-  CREATE FUNCTION ContarConductores(idParqueadero INT)
-  RETURNS INT
-  DETERMINISTIC
-  BEGIN
-  	DECLARE conteo INT;
-      SELECT COUNT(DISTINCT Cedula) INTO CONTEO
-      FROM RegistroParqueadero
-      WHERE idParqueadero = idParqueadero;
-      RETURN conteo;
-      
-  END //
-  
-  DELIMITER ;
+ 
+    CREATE FUNCTION ContarConductores(idParqueadero INT)
+    RETURNS INT
+    DETERMINISTIC
+    BEGIN
+    	DECLARE conteo INT;
+        SELECT COUNT(DISTINCT Cedula) INTO CONTEO
+        FROM RegistroParqueadero
+        WHERE idParqueadero = idParqueadero;
+        RETURN conteo;
+        
+    END //
+    
+    DELIMITER ;
 
 
 Usamos DELIMITER //: Cambia el delimitador para permitir el uso de ; dentro de la función. posterior a esto usamo: CREATE FUNCTION contarConductores(idParqueadero INT) que define la función contarConductores que toma un parámetro idParqueadero.
