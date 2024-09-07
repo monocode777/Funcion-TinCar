@@ -28,7 +28,7 @@ Definimos una columna idParqueadero y una columna fecha para registrar la fecha 
     DELIMITER ;
 
 
-Usamos DELIMITER //: Cambia el delimitador para permitir el uso de ; dentro de la función. posterior a esto usamo: CREATE FUNCTION contarConductores(idParqueadero INT) que define la función contarConductores que toma un parámetro idParqueadero.
+Usamos DELIMITER // que cambia el delimitador para permitir el uso de ; dentro de la función. Posterior a esto usamos CREATE FUNCTION contarConductores(idParqueadero INT) que define la función contarConductores que toma un parámetro idParqueadero.
 Usaremos RETURNS INT que especifica que la función devuelve un entero y posterior usamos DECLARE conteo INT que declara una variable conteo para almacenar el resultado.
 Ahora con SELECT COUNT(DISTINCT cedula) INTO conteo que Cuenta los conductores únicos que han usado el parqueadero específico.
 Usamos RETURN conteo que devuelve el conteo.
@@ -37,4 +37,4 @@ Usamos RETURN conteo que devuelve el conteo.
 # Uso de la función:
 Para usar esta función se ejecuta la siguiente consulta:
 
-  SELECT ContarConductores (1);
+    SELECT ContarConductores (1);
